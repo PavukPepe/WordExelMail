@@ -5,8 +5,54 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WordExelMail"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="600" Width="800">
     <Grid>
-
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
+        <WrapPanel Orientation="Vertical">
+            <Button x:Name="create_word" Background="White">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Image Source="word.png"></Image>
+                    <TextBlock Text="Создать" FontFamily="Bahnschrift SemiBold SemiCondensed" FontSize="14" ></TextBlock>
+                </Grid>
+            </Button>
+            <Button x:Name="open_word" Background="White">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Image Source="word.png"></Image>
+                    <TextBlock Text="Открыть" FontFamily="Bahnschrift SemiBold SemiCondensed" FontSize="14" ></TextBlock>
+                </Grid>
+            </Button>
+            <Button x:Name="create_excel" Background="White" Click="create_excel_Click">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Image Source="/excel.png"></Image>
+                    <TextBlock Text="Создать" FontFamily="Bahnschrift SemiBold SemiCondensed" FontSize="14" ></TextBlock>
+                </Grid>
+            </Button>
+            <Button x:Name="open_excel" Background="White" Click="open_excel_Click">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Image Source="/excel.png"></Image>
+                    <TextBlock Text="Открыть" FontFamily="Bahnschrift SemiBold SemiCondensed" FontSize="14" ></TextBlock>
+                </Grid>
+            </Button>
+        </WrapPanel>
+        <Frame x:Name="work_space" Grid.Column="1" ></Frame>
     </Grid>
 </Window>

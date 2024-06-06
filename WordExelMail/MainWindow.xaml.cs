@@ -1,4 +1,6 @@
-﻿using System.Text;
+﻿using Microsoft.Win32;
+using Microsoft.WindowsAPICodePack.Dialogs;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -19,6 +21,22 @@ namespace WordExelMail
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void open_excel_Click(object sender, RoutedEventArgs e)
+        {
+            CommonOpenFileDialog openFileDialog = new CommonOpenFileDialog();
+            CommonFileDialogResult res = openFileDialog.ShowDialog();
+            if (res == CommonFileDialogResult.Ok)
+            {
+                work_space.Content = new ExcelPage(openFileDialog.FileName);
+            }
+
+        }
+
+        private void create_excel_Click(object sender, RoutedEventArgs e)
+        {
+            work_space.Content = new word_page();
         }
     }
 }
