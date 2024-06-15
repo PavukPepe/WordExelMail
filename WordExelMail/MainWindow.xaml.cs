@@ -5,6 +5,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -22,7 +23,8 @@ namespace WordExelMail
 
         private void open_excel_Click(object sender, RoutedEventArgs e)
         {
-            CommonOpenFileDialog openFileDialog = new CommonOpenFileDialog();
+            CommonOpenFileDialog openFileDialog = new CommonOpenFileDialog() ;
+            openFileDialog.Filters.Add(new CommonFileDialogFilter("", "xlsx"));
             CommonFileDialogResult res = openFileDialog.ShowDialog();
             if (res == CommonFileDialogResult.Ok)
             {
