@@ -12,7 +12,7 @@
             <ColumnDefinition Width="5*"/>
         </Grid.ColumnDefinitions>
         <WrapPanel Orientation="Vertical">
-            <Button x:Name="create_word" Background="White">
+            <Button x:Name="create_word" Background="White" Click="create_word_Click">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition></RowDefinition>
@@ -22,7 +22,7 @@
                     <TextBlock Text="Создать" FontFamily="Bahnschrift SemiBold SemiCondensed" FontSize="14" ></TextBlock>
                 </Grid>
             </Button>
-            <Button x:Name="open_word" Background="White">
+            <Button x:Name="open_word" Background="White" Click="open_word_Click">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition></RowDefinition>
@@ -53,6 +53,6 @@
                 </Grid>
             </Button>
         </WrapPanel>
-        <Frame x:Name="work_space" Grid.Column="1" ></Frame>
+        <Frame x:Name="work_space" Grid.Column="1"></Frame>
     </Grid>
 </Window>

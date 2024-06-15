@@ -13,9 +13,6 @@ using System.Windows.Shapes;
 
 namespace WordExelMail
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -36,7 +33,22 @@ namespace WordExelMail
 
         private void create_excel_Click(object sender, RoutedEventArgs e)
         {
-            work_space.Content = new word_page();
+
+        }
+
+        private void open_word_Click(object sender, RoutedEventArgs e)
+        {
+            CommonOpenFileDialog openFileDialog = new CommonOpenFileDialog();
+            CommonFileDialogResult res = openFileDialog.ShowDialog();
+            if (res == CommonFileDialogResult.Ok)
+            {
+                work_space.Content = new word_page(openFileDialog.FileName);
+            }
+        }
+
+        private void create_word_Click(object sender, RoutedEventArgs e)
+        {
+            work_space.Content = new word_page(null);
         }
     }
 }
