@@ -35,7 +35,7 @@ namespace WordExelMail
 
         private void create_excel_Click(object sender, RoutedEventArgs e)
         {
-
+            work_space.Content = new ExcelPage();
         }
 
         private void open_word_Click(object sender, RoutedEventArgs e)
