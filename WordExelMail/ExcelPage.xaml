@@ -9,7 +9,13 @@
       Title="ExcelPage">
 
     <Grid>
-        <DataGrid x:Name="main_data" Background="Aqua"></DataGrid>
-        <Button VerticalAlignment="Bottom" Content="Сохранить" FontFamily="Bahnschrift SemiBold SemiCondensed" FontSize="14" Click="Button_Click"></Button>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="43*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBox x:Name="name_place" VerticalAlignment="Center" Height="18"/>
+        <Button x:Name="add_but" HorizontalAlignment="Right" Content="Добавить столбец" Click="add_but_Click"></Button>
+        <DataGrid x:Name="main_data" Background="Aqua" Grid.Row="1"></DataGrid>
+        <Button Grid.Row="1"  VerticalAlignment="Bottom" Content="Сохранить" FontFamily="Bahnschrift SemiBold SemiCondensed" FontSize="14" Click="Button_Click" Height="21"></Button>
     </Grid>
 </Page>
